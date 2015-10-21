@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Character Countdown</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Jquery Character Countdown</h1>
+		</div>
+		<h2>Examples</h2>
+
+		<div class="form-group">
+			<input type="text" class="form-control" maxlength="25" data-character-countdown="#example">
+			<p><span id="example"></span> characters left</p>
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" maxlength="100" data-character-countdown="#example2"></textarea>
+			<p><span id="example2"></span> characters left</p>
+		</div>
+	</div>
+
+
+	<script src="../dist/jquery-1.11.3.min.js"></script>
+	<script src="../dist/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../dist/jquery.characterCounter.min.js"></script>
+	<script>
+		$(function(){
+			$('[data-character-countdown]').characterCountdown();
+		})
+	</script>
+</body>
+</html>
