@@ -14,7 +14,7 @@ Call the initializer function:
 
 Use a data-target to set where show the characters counter.
 
-The maxlength is required.
+The data-target and maxlength are required.
 
 Example:
 

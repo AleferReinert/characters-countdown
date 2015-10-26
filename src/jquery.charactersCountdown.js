@@ -33,8 +33,8 @@ $.fn.charactersCountdown = function(options) {
 
             $(output).text(left.toString());
 
-            if(left <= settings.warningLength){
-                $(output).css('color', settings.warningColor);
+            if(left <= ((typeof $(this).data('warning-length') == undefined || typeof $(this).data('warning-length') == "undefined") ? settings.warningLength : $(this).data('warning-length'))){
+                $(output).css('color', (typeof $(this).data('warning-color') == undefined || typeof $(this).data('warning-color') == "undefined") ? settings.warningColor : $(this).data('warning-color'));
             } else {
                 $(output).css('color', 'inherit');
             }
