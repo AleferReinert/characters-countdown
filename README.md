@@ -12,14 +12,12 @@ Call the initializer function:
 
     $('.selector').charactersCountdown();
 
-Use a data-target to set where show the characters counter.
-
-The data-target and maxlength are required.
+The maxlength is required.
 
 Example:
 
-    <input class="selector" type="text" data-target="#example" maxlength="300">
-    <p id="example"></p>
+    <input class="selector" type="text" maxlength="30">
+    <p class="characters-countdown-output"></p>
 
 ## Options
 
@@ -34,6 +32,13 @@ Example:
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>output</td>
+            <td>string</td>
+            <td>.characters-countdown-output</td>
+            <td>true</td>
+            <td>The output to characters countdown.</td>
+        </tr>
         <tr>
             <td>warningColor</td>
             <td>string</td>

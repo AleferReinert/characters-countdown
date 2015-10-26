@@ -20,14 +20,14 @@
 
 		<h2>HTML5 example</h2>
 		<div class="form-group">
-			<input type="text" class="characters-countdown form-control" maxlength="40" data-output="#output-example" data-warning-length="10" data-warning-color="#0f0">
-			<p><span id="output-example"></span> characters left</p>
+			<input type="text" class="characters-countdown form-control" maxlength="40" data-output="#html-output-example" data-warning-length="10" data-warning-color="#0f0">
+			<p><span id="html-output-example"></span> characters left</p>
 		</div>
 
 		<h2>Script example</h2>
 		<div class="form-group">
 			<textarea id="example" type="text" class="form-control" maxlength="150"></textarea>
-			<p><span id="output-example2"></span> characters left</p>
+			<p><span id="output-example"></span> characters left</p>
 		</div>
 	</div>
 
@@ -39,7 +39,7 @@
 			$('.characters-countdown').charactersCountdown();
 
 			$('#example').charactersCountdown({
-				output: '#output-example2',
+				output: '#output-example',
 				warningColor: 'orange',
 				warningLength: 50
 			});
