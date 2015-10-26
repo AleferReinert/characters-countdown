@@ -12,7 +12,7 @@ Call the initializer function:
 
     $('.selector').charactersCountdown();
 
-Use a data-character-countdown to set where show the characters counter.
+Use a data-target to set where show the characters counter.
 
 The maxlength is required.
 
