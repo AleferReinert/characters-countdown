@@ -19,6 +19,13 @@ Example:
     <input class="selector" type="text" maxlength="30">
     <p class="characters-countdown-output"></p>
 
+#### Support HTML Parameters
+Yes, use options with "data-" attribute.
+
+Example:
+
+    <input class="selector" type="text" maxlength="30" data-output="#output-example" data-warning-color="#00FFFF" data-warning-length="15">
+    <p id="output-example"></p>
 ## Options
 
 <table width="100%">
