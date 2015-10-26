@@ -14,26 +14,23 @@
 		<h2>Examples</h2>
 
 		<div class="form-group">
-			<input type="text" class="characters-countdown form-control" maxlength="25" data-target="#example" data-warning-color="#0f0" data-warning-length="20">
+			<input type="text" class="form-control" maxlength="25" data-character-countdown="#example">
 			<p><span id="example"></span> characters left</p>
 		</div>
 		<div class="form-group">
-			<textarea class="characters-countdown form-control" maxlength="40" data-target="#example2"></textarea>
+			<textarea class="form-control" maxlength="100" data-character-countdown="#example2"></textarea>
 			<p><span id="example2"></span> characters left</p>
 		</div>
 	</div>
 
-	<script src="../dist/jquery.min.js"></script>
-	<script src="../dist/jquery.charactersCountdown.min.js"></script>
 
+	<script src="../dist/jquery-1.11.3.min.js"></script>
+	<script src="../dist/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../dist/jquery.characterCounter.min.js"></script>
 	<script>
 		$(function(){
-			$('.characters-countdown').charactersCountdown({
-				warningColor: '#4E0',
-				warningLength: 10
-			});
+			$('[data-character-countdown]').characterCountdown();
 		})
 	</script>
-	<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

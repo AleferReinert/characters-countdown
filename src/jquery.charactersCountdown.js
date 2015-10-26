@@ -1,5 +1,15 @@
-jQuery.fn.characterCountdown = function(options) {
-    $(this).each(function() {
+/*! jquery.charactersCountdown v1.0.0 | */
+$.fn.charactersCountdown = function(options) {
+
+    var defaults = {
+        warningColor:   '#f00',
+        warningLength:  5
+    }
+
+    var settings = $.extend({}, defaults, options);
+
+    return this.each(function() {
+
         var max     = $(this).attr('maxlength'),
             val     = $(this).attr('value'),
             cur     = 0;
@@ -8,7 +18,7 @@ jQuery.fn.characterCountdown = function(options) {
             cur     = val.length;
 
         var left    = max-cur,
-            output  = $(this).data('character-countdown');
+            output  = $(this).data('target');
 
         $(output).text(left.toString());
 
@@ -23,8 +33,8 @@ jQuery.fn.characterCountdown = function(options) {
 
             $(output).text(left.toString());
 
-            if(left <= 5){
-                $(output).css('color', '#ff0000');
+            if(left <= settings.warningLength){
+                $(output).css('color', settings.warningColor);
             } else {
                 $(output).css('color', 'inherit');
             }
