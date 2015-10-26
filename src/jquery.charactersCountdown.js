@@ -1,42 +1,48 @@
 /*! jquery.charactersCountdown v1.0.0 | */
 $.fn.charactersCountdown = function(options) {
 
-    var defaults = {
+    var d = {
+        output: '.characters-countdown-output',
         warningColor:   '#f00',
         warningLength:  5
     }
 
-    var settings = $.extend({}, defaults, options);
+    var s = $.extend({}, d, options);
 
     return this.each(function() {
 
-        var max     = $(this).attr('maxlength'),
-            val     = $(this).attr('value'),
-            cur     = 0;
+        var m     = $(this).attr('maxlength'),
+            v     = $(this).attr('value'),
+            c     = 0;
 
-        if(val)
-            cur     = val.length;
+        if(v)
+            c     = v.length;
 
-        var left    = max-cur,
-            output  = $(this).data('target');
+        var l    = m-c,
+            dop  = $(this).data('output'),
+            dopc = ((typeof dop == undefined || typeof dop == "undefined") ? s.output : dop),
+            dl  = $(this).data('warning-length'),
+            dlc = ((typeof dl == undefined || typeof dl == "undefined") ? s.warningLength : dl),
+            dc  = $(this).data('warning-color'),
+            dcc = ((typeof dc == undefined || typeof dc == "undefined") ? s.warningColor : dc);
 
-        $(output).text(left.toString());
+        $(dopc).text(l.toString());
 
         $(this).keyup(function(i) {
-            var max = $(this).attr('maxlength'),
-                val = $(this).attr('value'),
-                cur = 0;
-            if(val)
-                cur = val.length;
+            var m = $(this).attr('maxlength'),
+                v = $(this).attr('value'),
+                c = 0;
+            if(v)
+                c = v.length;
 
-            var left = max-cur;
+            var l = m-c;
 
-            $(output).text(left.toString());
+            $(dopc).text(l.toString());
 
-            if(left <= ((typeof $(this).data('warning-length') == undefined || typeof $(this).data('warning-length') == "undefined") ? settings.warningLength : $(this).data('warning-length'))){
-                $(output).css('color', (typeof $(this).data('warning-color') == undefined || typeof $(this).data('warning-color') == "undefined") ? settings.warningColor : $(this).data('warning-color'));
+            if(l <= dlc){
+                $(dopc).css('color', dcc);
             } else {
-                $(output).css('color', 'inherit');
+                $(dopc).css('color', 'inherit');
             }
             return this;
         });

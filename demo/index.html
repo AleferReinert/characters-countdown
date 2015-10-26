@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Jquery Character Countdown</title>
+	<title>Jquery Characters Countdown</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
 </head>
@@ -11,15 +11,23 @@
 		<div class="page-header">
 			<h1>Jquery Character Countdown</h1>
 		</div>
-		<h2>Examples</h2>
 
+		<h2>Default example</h2>
 		<div class="form-group">
-			<input type="text" class="characters-countdown form-control" maxlength="25" data-target="#example" data-warning-color="#0f0" data-warning-length="20">
-			<p><span id="example"></span> characters left</p>
+			<input type="text" class="characters-countdown form-control" maxlength="25">
+			<p><span class="characters-countdown-output"></span> characters left</p>
 		</div>
+
+		<h2>HTML5 example</h2>
 		<div class="form-group">
-			<textarea class="characters-countdown form-control" maxlength="40" data-target="#example2"></textarea>
-			<p><span id="example2"></span> characters left</p>
+			<input type="text" class="characters-countdown form-control" maxlength="40" data-output="#output-example" data-warning-length="10" data-warning-color="#0f0">
+			<p><span id="output-example"></span> characters left</p>
+		</div>
+
+		<h2>Script example</h2>
+		<div class="form-group">
+			<textarea id="example" type="text" class="form-control" maxlength="150"></textarea>
+			<p><span id="output-example2"></span> characters left</p>
 		</div>
 	</div>
 
@@ -28,9 +36,12 @@
 
 	<script>
 		$(function(){
-			$('.characters-countdown').charactersCountdown({
-				warningColor: '#4E0',
-				warningLength: 10
+			$('.characters-countdown').charactersCountdown();
+
+			$('#example').charactersCountdown({
+				output: '#output-example2',
+				warningColor: 'orange',
+				warningLength: 50
 			});
 		})
 	</script>
